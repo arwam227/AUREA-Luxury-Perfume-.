@@ -1,0 +1,18 @@
+{
+  "name": "aurea-luxury-perfume-web",
+  "version": "1.0.0",
+  "description": "AURÉA Haute Parfumerie — Official Luxury Perfume E-Commerce Web Platform",
+  "scripts": {
+    "start": "python server.py",
+    "serve": "node -e \"const http=require('http'),fs=require('fs'),path=require('path');http.createServer((req,res)=>{let f=req.url==='/'?'/index.html':req.url;let p=path.join(__dirname,f);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('Not Found')}else{let ext=path.extname(p);let m={'html':'text/html','js':'application/javascript','css':'text/css','png':'image/png'}[ext.slice(1)]||'text/plain';res.writeHead(200,{'Content-Type':m});res.end(d)}})}).listen(5173,()=>console.log('Server running at http://localhost:5173'));\""
+  },
+  "keywords": [
+    "aurea",
+    "luxury-perfume",
+    "ecommerce",
+    "design-system",
+    "egypt-localization"
+  ],
+  "author": "AURÉA Haute Parfumerie Design & Engineering Team",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,107 @@
+/* AURÉA HAUTE PARFUMERIE — Design System Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-plum: #7A3E4D;
+  --primary-plum-dark: #5D2C39;
+  --gold-accent: #C5A265;
+  --gold-light: #F8F3EA;
+  --gold-border: #E5CFAB;
+  --canvas-cream: #FAF6F4;
+  --card-cashmere: #F4ECE9;
+  --text-espresso: #231B1E;
+  --text-muted: #615257;
+  --border-subtle: #E2D5D0;
+  --border-light: #E8DAD5;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-normal: 240ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--canvas-cream);
+  color: var(--text-espresso);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Luxury transitions */
+.transition-luxury {
+  transition: all var(--duration-normal) var(--ease-luxury);
+}
+
+.card-hover {
+  transition: transform 240ms var(--ease-luxury), box-shadow 240ms var(--ease-luxury);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(122, 62, 77, 0.08);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #D8C7C2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-plum);
+}
+
+/* Badge styling */
+.badge-match {
+  background: #FFF8EE;
+  border: 1px solid var(--gold-border);
+  color: #8C6D32;
+}
+
+/* Custom range slider */
+input[type=range] {
+  accent-color: var(--primary-plum);
+}
+
+/* Modal animation */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-modal {
+  animation: modalFadeIn 200ms var(--ease-luxury) forwards;
+}
+
+/* Toast animation */
+@keyframes toastSlideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-toast {
+  animation: toastSlideUp 240ms var(--ease-luxury) forwards;
+}
